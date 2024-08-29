@@ -1,0 +1,44 @@
+﻿<Window x:Class="AN.Views.EditMetalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AN.Views"
+        mc:Ignorable="d"
+        xmlns:viewmodels="clr-namespace:AN.ViewModels"
+		d:DataContext="{d:DesignInstance Type=viewmodels:EditMetalWindowModel}"
+		WindowStyle="ToolWindow"
+		Background="{StaticResource BackGroundColor}"  MinHeight="300" MinWidth="300"  MaxHeight="300" MaxWidth="300"
+        Title="EditMetalWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Label Content="{Binding MetalText}" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center" Margin="0,0,0,30" />
+            <TextBox Text="{Binding Changing, UpdateSourceTrigger=PropertyChanged, Delay=2000}" 
+							 Width="104" Height="20" HorizontalAlignment="Center" Margin="0,30,0,0"
+							 VerticalAlignment="Center" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="1" Name="SaveBtnGrid" Grid.Column="0">
+                    <Button Grid.Row="1" Content="Yadda saxla" Width="54" Style="{DynamicResource ButtonStyle}" Command="{Binding  SaveEditCommand }" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                </Grid>
+                <Grid Grid.Row="1" Name="CancerBtnGrid" Grid.Column="1">
+                    <Button Grid.Row="1" Content="Ləğv et" Width="54" Style="{DynamicResource ButtonStyle}" Command="{Binding CancerEditCommand }" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,129 @@
+﻿<Window x:Class="AN.Views.OrderDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AN.Views"
+        mc:Ignorable="d"
+        Title="OrderDetailsWindow"
+    Background="{DynamicResource BackGroundColor}"
+         MinHeight="500" MinWidth="300"  MaxHeight="500" MaxWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="WorkerName" Grid.Row="0">
+                <Label Content="{Binding WorkerFullName}" HorizontalAlignment="Center" FontSize="25" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="NamePartinionNumberGrid" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <!--Надпись Модель-->
+                    <Label Content="Model" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Top"  />
+                    <!--Поле Модель-->
+                    <TextBlock Text="{Binding SelectedOrder.Model , UpdateSourceTrigger=PropertyChanged}" 
+							 Background="White" Foreground="Black"
+                             Width="104" Height="20" HorizontalAlignment="Center"
+							 VerticalAlignment="Bottom" />
+                </Grid>
+                <Grid Grid.Column="1" >
+                    <!--Надпись Номер Партии-->
+                    <Label Content="Partia" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Top"  />
+                    <!--Поле Партии-->
+                    <TextBlock Text="{Binding SelectedOrder.Batch_number , UpdateSourceTrigger=PropertyChanged}" 
+							 Background="White" Foreground="Black"
+                             Width="104" Height="20" HorizontalAlignment="Center"
+							 VerticalAlignment="Bottom"  />
+                </Grid>
+            </Grid>
+            <Grid x:Name="ProbNumberGrid" Grid.Row="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" >
+                    <!--Надпись Количество-->
+                    <Label Content="Dənə" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Top"  />
+                    <!--Поле для Количество-->
+                    <TextBlock Text="{Binding SelectedOrder.Number , UpdateSourceTrigger=PropertyChanged}" 
+							 Background="White" Foreground="Black"
+                             Width="104" Height="20" HorizontalAlignment="Center"
+							 VerticalAlignment="Bottom"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Label Content="Karat" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Top"  />
+
+                    <TextBlock Text="{Binding SelectedOrder.Karat , UpdateSourceTrigger=PropertyChanged}" 
+							 Background="White" Foreground="Black"
+                             Width="104" Height="20" HorizontalAlignment="Center"
+							 VerticalAlignment="Bottom" />
+                </Grid>
+            </Grid>
+            <Grid x:Name="BronzeGoldWeight" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <!--Надпись Вес бронзы-->
+                    <Label Content="Korpus çəki" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Top"   />
+                    <!--Поле Веса бронзы-->
+                    <TextBlock Text="{Binding SelectedOrder.BronzeWeight, UpdateSourceTrigger=PropertyChanged}"
+							 Background="White" Foreground="Black"
+                             Width="104" Height="20" HorizontalAlignment="Center"
+							 VerticalAlignment="Bottom" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <!--Надпись Вес золота-->
+                    <Label Content="Qızıl çəki" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Top"   />
+                    <!--Поле Вес золота-->
+                    <TextBlock Text="{Binding SelectedOrder.GoldWeight , UpdateSourceTrigger=PropertyChanged}" 
+							 Background="White" Foreground="Black"
+                               Width="104" Height="20" HorizontalAlignment="Center"
+							 VerticalAlignment="Bottom" />
+                </Grid>
+            </Grid>
+            <Grid x:Name="GoldHistoryGrid" Grid.Row="4" Margin="10,0,10,0">
+                <!--Надпись История изменения веса золота-->
+                <Label Content="Qızıl" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Top"   />
+                <!--Поле Истории золота-->
+                <TextBlock Text="{Binding SelectedOrder.GoldHistory , UpdateSourceTrigger=PropertyChanged}" 
+							 Background="White" Foreground="Black"
+                               Width="{Binding ElementName=GoldHistoryGrid , Path=ActualWidth}" Height="20" HorizontalAlignment="Center"
+							 VerticalAlignment="Bottom" />
+            </Grid>
+            <Grid x:Name="BronzeHistoryGrid" Grid.Row="5" Margin="10,0,10,0">
+                <!--Надпись История изменения веса бронзы-->
+                <Label Content="Korpus" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Top"   />
+                <!--Поле Истории Бронзы-->
+                <TextBlock Text="{Binding SelectedOrder.BronzeHistory , UpdateSourceTrigger=PropertyChanged}" 
+							 Background="White" Foreground="Black"
+                               Width="{Binding ElementName=BronzeHistoryGrid , Path=ActualWidth}" Height="20" HorizontalAlignment="Center"
+							 VerticalAlignment="Bottom" />
+            </Grid>
+
+        </Grid>
+        <Grid Margin="10,0,-10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        </Grid>
+    </Grid>
+</Window>

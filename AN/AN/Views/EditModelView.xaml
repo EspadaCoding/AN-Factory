@@ -1,0 +1,78 @@
+﻿<ContentControl x:Class="AN.Views.EditModelView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AN.Views"
+      xmlns:viewmodels="clr-namespace:AN.ViewModels"
+                         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:EditModelViewModel}"
+             d:DesignHeight="500" d:DesignWidth="900"
+             Background="{StaticResource BackGroundColor}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="BackBtnGrid" Grid.Row="0">
+                <!--Кнопки для назад-->
+                <Button Content="Geri" Style="{DynamicResource ButtonStyle}" Width="{Binding ElementName=BackBtnGrid, Path=ActualHeight}" Command="{Binding NavBack}" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+            </Grid>
+            <Grid Grid.Row="1">
+                <!--Надпись Модель-->
+                <Label Content="Model" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top"  Margin="0,10,0,0"   />
+                <!--Поле для ввода Модель-->
+                <TextBox Text="{Binding SelectedModel.Name , UpdateSourceTrigger=PropertyChanged}" 
+							 Width="104" Height="20" HorizontalAlignment="Center"
+							 VerticalAlignment="Top" Margin="0,45,0,0"  />
+
+                <DatePicker VerticalAlignment="Top"  SelectedDate="{Binding Date}" HorizontalAlignment="Center" Margin="0,100,0,0"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <DataGrid x:Name="DataGridCalc" ItemsSource="{Binding SelectedModel.Details}" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseMove">
+                            <i:InvokeCommandAction Command="{Binding RefreshDataGridCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock Text="Общая стоимость - " HorizontalAlignment="Left" FontSize="15" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding TotalPriceUSD ,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="150,0,0,0" FontSize="15"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2">
+                <Button Style="{StaticResource ButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="104" Height="30" Content="Yadda saxla" Command="{Binding SaveCommand}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentControl>

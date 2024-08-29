@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="AN.Views.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AN.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="{StaticResource BackGroundColor}">
+
+    <Grid Background="{DynamicResource ImageBack}" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Button Style="{DynamicResource ButtonStyle}" Command="{Binding NavWorkers}" Width="100" Height="30" Margin="0,0,0,80" Content="İşçilər"/>
+
+            <Button Style="{DynamicResource ButtonStyle}" Command="{Binding NavOrders}" Width="100" Height="30" Content="Işlər"/>
+
+            <Button Style="{DynamicResource ButtonStyle}" Command="{Binding NavModels}" Width="100" Height="30" Margin="0,80,0,0" Content="Modelər" />
+        </Grid>
+        
+    </Grid>
+</UserControl>
+

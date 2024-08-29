@@ -1,0 +1,73 @@
+﻿<Window x:Class="AN.Views.EditWorkerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AN.Views"
+        mc:Ignorable="d"
+        MaxHeight="300"
+        MaxWidth="325"
+        MinHeight="300"
+        MinWidth="325"
+        WindowStyle="ToolWindow"
+        Background="{StaticResource BackGroundColor}"
+        xmlns:viewmodels="clr-namespace:AN.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:EditWorkerWindowModel}"
+        Title="EditWorkerWindow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="NameGrid" Grid.Row="1" Grid.Column="0" Margin="10,0,10,0">
+            <!--Надпись Имя-->
+            <Label Content="Ad" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center" Margin="0,0,0,30"  />
+            <!--Поле для ввода имени-->
+            <TextBox Text="{Binding SelectedWorker.FirstName , UpdateSourceTrigger=PropertyChanged}" Width="{Binding ElementName=NameGrid, Path=ActualWidth}" Height="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+        </Grid>
+        <Grid x:Name="LastNameGrid" Grid.Row="1" Grid.Column="1" Margin="10,0,10,0">
+            <!--Надпись Фамилия-->
+            <Label Content="Soyad" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30"/>
+            <!--Поле для ввода фамилия-->
+            <TextBox Text="{Binding SelectedWorker.LastName, UpdateSourceTrigger=PropertyChanged}" Width="{Binding ElementName=LastNameGrid, Path=ActualWidth}" Height="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0" />
+        </Grid>
+        <Grid x:Name="PhoneNumber1Grid" Grid.Row="2" Grid.Column="0" Margin="10,0,10,0">
+            <!--Надпись Номер1-->
+            <Label Content="Mobil nömrə 1" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30"/>
+            <!--Поле для ввода Номер1-->
+            <TextBox Text="{Binding SelectedWorker.Phone, UpdateSourceTrigger=PropertyChanged}" Width="{Binding ElementName=PhoneNumber1Grid, Path=ActualWidth}" Height="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0" />
+        </Grid>
+        <Grid x:Name="PhoneNumber2Grid" Grid.Row="2" Grid.Column="1" Margin="10,0,10,0">
+            <!--Надпись Номер2-->
+            <Label Content="Mobil nömrə 2" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30"/>
+            <!--Поле для ввода Номер2-->
+            <TextBox Text="{Binding SelectedWorker.SecondPhone, UpdateSourceTrigger=PropertyChanged}" Width="{Binding ElementName=PhoneNumber2Grid, Path=ActualWidth}" Height="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0" />
+        </Grid>
+        <Grid x:Name="Btns" Grid.Row="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Row="1" Name="SaveBtnGrid" Grid.Column="0">
+                <Button Grid.Row="1" Content="Yadda saxla"  Style="{DynamicResource ButtonStyle}" Command="{Binding  SaveEditCommand }" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" />
+            </Grid>
+            
+            <Grid Grid.Row="1" Name="CancerBtnGrid" Grid.Column="1">
+                <Button Grid.Row="1" Content="Ləğv et" Style="{DynamicResource ButtonStyle}" Command="{Binding CancerEditCommand }" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,0" />
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</Window>

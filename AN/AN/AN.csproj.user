@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="PrintingView\PrintAllModelsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PrintingView\PrintDoneOrderView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PrintingView\PrintModelView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PrintingView\PrintOrderView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PrintingView\PrintPartiaModelsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AcceptingWorkWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddModelView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddOrderWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DoneOrderDetailsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditGoldCostWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditMetalWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditModelView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditOrderWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditWorkerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MenuView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ModelsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\OrderDetailsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\OrdersView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PartianNumberWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WorkersDetailsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WorkersView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Data\Data.json">
+      <SubType>Component</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="PrintingView\PrintAllModelsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PrintingView\PrintDoneOrderView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PrintingView\PrintModelView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PrintingView\PrintOrderView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PrintingView\PrintPartiaModelsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\BasicColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AcceptingWorkWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddModelView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddOrderWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DoneOrderDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditGoldCostWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditMetalWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditModelView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditOrderWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditWorkerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MenuView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ModelsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\OrderDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\OrdersView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PartianNumberWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WorkersDetailsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WorkersView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

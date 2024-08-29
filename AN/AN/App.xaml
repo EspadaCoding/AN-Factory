@@ -1,0 +1,42 @@
+﻿<Application x:Class="AN.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AN"
+             xmlns:vm="clr-namespace:AN.ViewModels"
+             xmlns:v="clr-namespace:AN.Views"
+             StartupUri="Views/MainView.xaml">
+    <Application.Resources>
+
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style/BasicColors.xaml"/>
+                <ResourceDictionary Source="Style/ButtonStyle.xaml"/>
+                
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type vm:MenuViewModel}">
+                <v:MenuView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:WorkersViewModel}">
+                <v:WorkersView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:AddModelViewModel}">
+                <v:AddModelView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ModelsViewModel}">
+                <v:ModelsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:EditModelViewModel}">
+                <v:EditModelView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+                <v:LoginView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:OrdersViewModel}">
+                <v:OrdersView/>
+            </DataTemplate>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

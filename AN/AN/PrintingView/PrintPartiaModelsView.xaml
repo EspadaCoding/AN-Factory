@@ -1,0 +1,45 @@
+﻿<Page x:Class="AN.PrintingView.PrintPartiaModelsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AN.PrintingView"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="1754 " d:DesignWidth="1240 "
+      Title="PrintPartiaModelsView">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="LogoGrid">
+            <Label Content="ANGoldWatch" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" />
+            <Label x:Name="PartiaName" Content="Partia - " VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="40" />
+            <Label x:Name="PageNumber" Content="Page" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="50" Margin="0,20,20,0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <DataGrid x:Name="Models" FontSize="20"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Label Name="TotalNumber" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Общее количество -" FontSize="30"/>
+                    <Label Name="Date" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</Page>

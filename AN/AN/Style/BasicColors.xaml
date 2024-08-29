@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="BackGroundColor" Color="#e0e2db" Opacity="0.7"/>
+    <SolidColorBrush x:Key="LogoColor" Color="Black"/>
+    <SolidColorBrush x:Key="BtnColor" Color="#5f7470"/>
+    <SolidColorBrush x:Key="BtnBorderColor" Color="#3a86ff"/>
+    <SolidColorBrush x:Key="ActBtnBorderColor" Color="Gray"/>
+    <SolidColorBrush x:Key="BtnFontColor" Color="White"/>
+    <ImageBrush x:Key="ImageBack" ImageSource="/Images/back_img.png" Stretch="Fill" /> 
+
+</ResourceDictionary>
